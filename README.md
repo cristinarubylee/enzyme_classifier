@@ -18,16 +18,16 @@ pip install -r requirements.txt
 ```
 
 4. **Download data**
-
-Option A (notebook):
-1. Open `notebooks/01_data_download.ipynb`
-2. Run all cells (`Run → Run All`)
-3. Confirm that the data was saved to `data/raw/`
-
-Option B (manual):
-1. Download from:  
-   `https://rest.uniprot.org/uniprotkb/stream?compressed=true&format=tsv&fields=accession,sequence,ec&query=(reviewed:true)%20AND%20(ec:*)`
-2. Move the downloaded file to `data/raw/`
+   
+   **Option A (notebook):**
+   1. Open `notebooks/01_data_download.ipynb`
+   2. Run all cells (`Run → Run All`)
+   3. Confirm that the data was saved to `data/raw/`
+   
+   **Option B (manual):**
+   1. Download from:  
+      `https://rest.uniprot.org/uniprotkb/stream?compressed=true&format=tsv&fields=accession,sequence,ec&query=(reviewed:true)%20AND%20(ec:*)`
+   2. Move the downloaded file to `data/raw/`
 
 
 5. **Run preprocessing:**
@@ -46,7 +46,9 @@ python src/evaluation.py --model models/checkpoints/best
 ```
 
 ### Inference
+```bash
 
+```
 
 ## Experiments
 
