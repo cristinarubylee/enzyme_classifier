@@ -1,1 +1,1 @@
-query_url: "https://rest.uniprot.org/uniprotkb/stream?compressed=true&format=tsv&fields=accession,sequence,ec&query=(reviewed:true)%20AND%20(ec:*)"
+query_url: "https://rest.uniprot.org/uniprotkb/stream?compressed=true&fields=accession%2Csequence%2Cec&format=tsv&query=%28reviewed%3Atrue+AND+ec%3A*+AND+length%3A%5B50+TO+1000%5D%29+AND+%28reviewed%3Atrue%29"
