@@ -53,6 +53,9 @@ def main():
         greater_is_better=True, 
         report_to=["wandb"],
         run_name=cfg["wandb"]["run_name"],
+        dataloader_num_workers=cfg["data"].get("num_workers", 4),
+        dataloader_pin_memory=cfg["data"].get("pin_memory", True),
+        dataloader_persistent_workers=cfg["data"].get("persistent_workers", True),
     )
 
     # Create trainer
