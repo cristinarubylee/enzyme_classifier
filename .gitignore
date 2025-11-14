@@ -38,13 +38,9 @@ ENV/
 *~
 
 # Data files (don't commit large datasets)
-data/raw/*.csv
-data/raw/*.fasta
-data/raw/*.txt
-data/raw/*.tsv
-data/raw/*.zip
-data/processed/*.csv
-data/processed/*.fasta
+data/raw/
+data/processed/
+data/tokenized/
 
 # Model checkpoints (large files)
 models/checkpoints/*.bin
