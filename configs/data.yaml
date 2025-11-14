@@ -13,13 +13,13 @@ random_seed: 42
 # Class 5 = EC 6 (Ligases)
 # Class 6 = EC 7 (Translocases)
 targets:
-  0: 50000  # Oxidoreductases
-  1: 50000  # Transferases
-  2: 50000  # Hydrolases
-  3: 50000  # Lyases
-  4: 50000  # Isomerases
-  5: 50000  # Ligases
-  6: 50000  # Translocases
+  0: 30000  # Oxidoreductases
+  1: 30000  # Transferases
+  2: 30000  # Hydrolases
+  3: 30000  # Lyases
+  4: 30000  # Isomerases
+  5: 30000  # Ligases
+  6: 30000  # Translocases
 
 # Train/validation/test split ratios
 split_ratios:
