@@ -1,12 +1,19 @@
 import wandb
 import os
+import torch
 from transformers import TrainingArguments, Trainer
 from src.modeling import load_lora_model
 from src.dataset import load_datasets
 from src.utils import load_config, compute_metrics
 
-
 def main():
+    if torch.cuda.is_available():
+        print(f"✓ GPU detected: {torch.cuda.get_device_name(0)}")
+        print(f"  CUDA version: {torch.version.cuda}")
+        print(f"  Available memory: {torch.cuda.get_device_properties(0).total_memory / 1e9:.2f} GB")
+    else:
+        print("⚠ WARNING: No GPU detected! Training will be very slow.")
+    
     cfg = load_config("configs/model.yaml")
 
     print("Loaded config.")
@@ -71,10 +78,15 @@ def main():
     # Start/resume training
     print("Starting training...")
     checkpoint_dir = "models/checkpoints"
-    checkpoints = [os.path.join(checkpoint_dir, d) for d in os.listdir(checkpoint_dir) 
-                if os.path.isdir(os.path.join(checkpoint_dir, d)) and d.startswith("checkpoint")]
+    
+    os.makedirs(checkpoint_dir, exist_ok=True)
 
-    if os.path.exists(checkpoint_dir) and any(d.startswith("checkpoint") for d in os.listdir(checkpoint_dir)):
+    has_checkpoint = (
+        os.path.exists(checkpoint_dir) and 
+        any(d.startswith("checkpoint-") for d in os.listdir(checkpoint_dir))
+    )
+    
+    if has_checkpoint:
         print("Resuming from last checkpoint...")
         trainer.train(resume_from_checkpoint=True)
     else:
