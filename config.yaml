@@ -69,3 +69,4 @@ paths:
 wandb:
   enabled: true
   project: "enzyme-classification-esm2"
+  run_name: "esm2_lora_baseline"
