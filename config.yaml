@@ -27,7 +27,6 @@ data:
     raw: "data/raw"
     processed: "data/processed"
     tokenized: "data/tokenized"
-    checkpoints: "models/checkpoints"
 
 model:
   name: "facebook/esm2_t12_35M_UR50D"
@@ -65,8 +64,8 @@ training:
 paths:
   checkpoints: "models/checkpoints"
   results: "results"
+  final_model: "models/final_model"
 
 wandb:
   enabled: true
   project: "enzyme-classification-esm2"
-  run_name: "esm2_lora_baseline"
