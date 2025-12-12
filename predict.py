@@ -38,10 +38,9 @@ with open(CONFIG_PATH, "r") as f:
 
 
 def print_header():
-    """Print a header."""
-    print("\n" + "="*70)
-    print("  Enzyme Classification Predictor - CS 4701")
-    print("="*70 + "\n")
+    print("\n" + "=" * 70)
+    print("  ESM2 Enzyme Classifier (LoRA Fine-Tuned)")
+    print("=" * 70 + "\n")
 
 
 def print_separator():
