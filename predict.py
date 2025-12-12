@@ -399,7 +399,7 @@ Examples:
             else:
                 print("\nPREVIEW (first 10 rows):")
                 print_separator()
-                preview_cols = ['sequence_id', 'predicted_class_name', 'confidence', 'status']
+                preview_cols = ['sequence_id', 'predicted_class', 'predicted_class_name', 'confidence', 'status']
                 print(df[preview_cols].head(10).to_string(index=False))
                 if len(df) > 10:
                     print(f"\n... and {len(df) - 10} more rows")
