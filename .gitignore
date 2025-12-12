@@ -41,7 +41,6 @@ ENV/
 data/raw/
 data/processed/
 data/tokenized/
-*.csv
 
 # Model checkpoints (large files)
 models/checkpoints/*.bin

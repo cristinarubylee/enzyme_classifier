@@ -1,0 +1,84 @@
+
+================================================================================
+ENZYME CLASSIFICATION MODEL - EVALUATION SUMMARY
+================================================================================
+
+Model: facebook/esm2_t12_35M_UR50D
+Training: LoRA Fine-tuning
+Number of Classes: 7
+
+================================================================================
+OVERALL PERFORMANCE
+================================================================================
+
+Validation Set (23,879 samples):
+  Accuracy:         0.9705
+  Macro Precision:  0.9709
+  Macro Recall:     0.9709
+  Macro F1:         0.9709
+  Micro Precision:  0.9705
+  Micro Recall:     0.9705
+  Micro F1:         0.9705
+
+Test Set (23,879 samples):
+  Accuracy:         0.9700
+  Macro Precision:  0.9701
+  Macro Recall:     0.9693
+  Macro F1:         0.9697
+  Micro Precision:  0.9700
+  Micro Recall:     0.9700
+  Micro F1:         0.9700
+
+================================================================================
+PER-CLASS PERFORMANCE (Test Set)
+================================================================================
+
+Class Name                  Precision     Recall         F1    Support
+--------------------------------------------------------------------------------
+
+0     Oxidoreductases          0.9700     0.9760     0.9730       4500
+1     Transferases             0.9739     0.9618     0.9678       4500
+2     Hydrolases               0.9577     0.9707     0.9641       4500
+3     Lyases                   0.9564     0.9554     0.9559       3030
+4     Isomerases               0.9586     0.9452     0.9518       1933
+5     Ligases                  0.9930     0.9889     0.9910       3600
+6     Translocases             0.9809     0.9873     0.9841       1816
+
+================================================================================
+BEST PERFORMING CLASSES (by F1-Score)
+================================================================================
+
+5. Ligases: P=0.9930, R=0.9889, F1=0.9910
+6. Translocases: P=0.9809, R=0.9873, F1=0.9841
+0. Oxidoreductases: P=0.9700, R=0.9760, F1=0.9730
+
+================================================================================
+WORST PERFORMING CLASSES (by F1-Score)
+================================================================================
+
+2. Hydrolases: P=0.9577, R=0.9707, F1=0.9641
+3. Lyases: P=0.9564, R=0.9554, F1=0.9559
+4. Isomerases: P=0.9586, R=0.9452, F1=0.9518
+
+================================================================================
+OUTPUT FILES
+================================================================================
+
+Predictions:
+  - results/predictions/validation_predictions.csv
+  - results/predictions/test_predictions.csv
+  - results/predictions/misclassified_samples.csv
+
+Metrics:
+  - results/metrics/overall_metrics.csv
+  - results/metrics/perclass_metrics_val.csv
+  - results/metrics/perclass_metrics_test.csv
+  - results/metrics/error_patterns.csv
+
+Figures:
+  - results/figures/confusion_matrix_test.png
+  - results/figures/confusion_matrix_val.png
+
+================================================================================
+END OF REPORT
+================================================================================
